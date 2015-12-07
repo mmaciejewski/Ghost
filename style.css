@@ -4,6 +4,7 @@
     background-image: url(img/Cave.png);
     background-size: contain;
     display: block;
+    float: left;
 }
 
 #ghost{
@@ -14,4 +15,14 @@
 #ghostImg{
     width: 50px;
     height: 50px;
+}
+
+#description{   
+    width: 300px;
+    height: 550px;
+    overflow: auto;
+}
+
+#story{
+    text-align: center;
 }
