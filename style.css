@@ -1,0 +1,16 @@
+#map{
+    width: 550px;
+    height: 550px;
+    background-color: rgb(22,22,22);
+    display: block;
+}
+
+#ghost{
+    padding-left: 250px;
+    padding-top: 250px;
+}
+
+#ghostImg{
+    width: 50px;
+    height: 50px;
+}
