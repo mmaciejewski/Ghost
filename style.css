@@ -1,7 +1,8 @@
 #map{
     width: 550px;
     height: 550px;
-    background-color: rgb(22,22,22);
+    background-image: url(img/Cave.png);
+    background-size: contain;
     display: block;
 }
 

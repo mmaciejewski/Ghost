@@ -9,21 +9,25 @@ $(document).ready(function() {
        //LEFT
        if (e.keyCode == 37) {
            //alert("left pressed");
-           $("#ghost").css("padding-left", "-=50");
-           return false;
+           if ($("#ghost").css("padding-left") !== '50px'){
+                $("#ghost").css("padding-left", "-=50");
+                return false;
+           }
        }
        
        //UP
        if (e.keyCode == 38) { 
            //alert( "u pressed" );
-           $("#ghost").css("padding-top", "-=50");
-           return false;
+           if ($("#ghost").css("padding-top") !== '50px'){
+                $("#ghost").css("padding-top", "-=50");
+                return false;
+           }
        }
        
        //RIGHT
        if (e.keyCode == 39) { 
            //alert( "r pressed" );
-           if ($("#ghost").css("padding-left") !== '500px'){
+           if ($("#ghost").css("padding-left") !== '450px'){
                 $("#ghost").css("padding-left", "+=50");
                 return false;
         }
@@ -31,8 +35,14 @@ $(document).ready(function() {
        
        //DOWN
        if (e.keyCode == 40) { 
-           //alert( "d pressed" );
-           if ($("#ghost").css("padding-top") !== '500px'){
+           //LEAVING CAVE
+           if ($("#ghost").css("padding-top") === '450px' && $("#ghost").css("padding-left") === '250px'){
+                $("#ghost").css("padding-top", "500px");
+                alert("You are leaving cave.");
+                return false;
+               
+           }
+           if ($("#ghost").css("padding-top") !== '450px'){
                 $("#ghost").css("padding-top", "+=50");
                 return false;
            }
