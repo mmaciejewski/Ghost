@@ -2,10 +2,17 @@
 
 $(document).ready(function() {
     $("#location").text("The cave");
+    $("#ghost").css('visibility','visible').hide().fadeIn(15000); //Fade in ghost
+    
+    function mapChange($map) {
+        $map.hide();
+    }
+    
+    
     
     //GHOST MOVEMENT
     $(document).keydown(function(e){
-       
+   
        //LEFT
        if (e.keyCode == 37) {
            //alert("left pressed");
@@ -38,8 +45,13 @@ $(document).ready(function() {
            //LEAVING CAVE
            if ($("#ghost").css("padding-top") === '450px' && $("#ghost").css("padding-left") === '250px'){
                 $("#ghost").css("padding-top", "500px");
-                alert("You are leaving cave.");
-                return false;
+                //alert("You are leaving cave.");
+                
+                //map change
+                $("#cavemap").fadeOut("slow");
+                $("#cavemap").attr("id", "worldmap")
+                $("#worldmap").fadeIn("slow");
+                
                
            }
            if ($("#ghost").css("padding-top") !== '450px'){

@@ -1,4 +1,4 @@
-#map{
+#cavemap{
     width: 550px;
     height: 550px;
     background-image: url(img/Cave.png);
@@ -7,9 +7,19 @@
     float: left;
 }
 
+#worldmap{
+    width: 1200px;
+    height: 1200px;
+    background-size: contain;
+    display: block;
+    float: left;
+    background-color: green;
+}
+
 #ghost{
     padding-left: 250px;
     padding-top: 250px;
+    visibility: hidden;
 }
 
 #ghostImg{
