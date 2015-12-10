@@ -33,6 +33,15 @@
     overflow: auto;
 }
 
-#story{
+.story{
     text-align: center;
+}
+
+#interface{
+    width: 550px;
+    height: 130px;
+}
+
+.hidden{
+    display: none;
 }
