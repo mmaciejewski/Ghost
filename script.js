@@ -8,7 +8,9 @@ $(document).ready(function() {
         $map.hide();
     }
     
-    
+    $( "#light" ).click(function() {
+        $("#description p").fadeIn("slow");
+    });
     
     //GHOST MOVEMENT
     $(document).keydown(function(e){
