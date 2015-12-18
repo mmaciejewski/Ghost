@@ -1,8 +1,7 @@
 /* jshint browser:true, jquery:true */
 
 $(document).ready(function() {
-    var currentLocation = "The Cave";
-    locationChange(currentLocation);
+    locationChange("The Cave");
     $("#ghost").css('visibility','visible').hide().fadeIn(15000); //Fade in ghost
     
     function locationChange ($location){
@@ -10,11 +9,10 @@ $(document).ready(function() {
     }
     
     //map change
-    function mapChange($map) {
-        $("#cavemap").fadeOut("slow");
-        $("#cavemap").attr("id", "worldmap")
-        $("#worldmap").fadeIn("slow");
-        $map.hide();
+    function mapChange($newMap, $currentMap) {
+            $("#" + $currentMap).fadeOut("slow");
+            $("#" + $currentMap).attr("id", $newMap)
+            $("#" + $newMap).fadeIn("slow");
     }
     
     $( "#light" ).click(function() {
@@ -57,10 +55,11 @@ $(document).ready(function() {
            if ($("#ghost").css("padding-top") === '450px' && $("#ghost").css("padding-left") === '250px'){
                 $("#ghost").css("padding-top", "500px");
                 //alert("You are leaving cave.");
-                
-
-                
+               mapChange("worldmap", "cavemap");
                
+                //$("#" + "cavemap").fadeOut("slow");
+                //$("#cavemap").attr("id", "worldmap")
+                //$("#" + "worldmap").fadeIn("slow");
            }
            if ($("#ghost").css("padding-top") !== '450px'){
                 $("#ghost").css("padding-top", "+=50");
