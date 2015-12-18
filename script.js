@@ -1,10 +1,19 @@
 /* jshint browser:true, jquery:true */
 
 $(document).ready(function() {
-    $("#location").text("The cave");
+    var currentLocation = "The Cave";
+    locationChange(currentLocation);
     $("#ghost").css('visibility','visible').hide().fadeIn(15000); //Fade in ghost
     
+    function locationChange ($location){
+        $("#location").text($location);
+    }
+    
+    //map change
     function mapChange($map) {
+        $("#cavemap").fadeOut("slow");
+        $("#cavemap").attr("id", "worldmap")
+        $("#worldmap").fadeIn("slow");
         $map.hide();
     }
     
@@ -49,10 +58,7 @@ $(document).ready(function() {
                 $("#ghost").css("padding-top", "500px");
                 //alert("You are leaving cave.");
                 
-                //map change
-                $("#cavemap").fadeOut("slow");
-                $("#cavemap").attr("id", "worldmap")
-                $("#worldmap").fadeIn("slow");
+
                 
                
            }
